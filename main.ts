@@ -13,10 +13,12 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Astronaut.overlapsWith(NPC)) {
         NumberNPC = 1
         Conversation = 1
+        textSprite = textsprite.create("Hello!")
+        textSprite.setPosition(scene.cameraProperty(CameraProperty.X) - 32, scene.cameraProperty(CameraProperty.Y) - 53)
     }
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (true) {
+    if (Conversation == 0) {
         animation.runImageAnimation(
         Astronaut,
         [img`
@@ -159,7 +161,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
-    if (true) {
+    if (Conversation == 0) {
         animation.runImageAnimation(
         Astronaut,
         [img`
@@ -203,7 +205,7 @@ controller.right.onEvent(ControllerButtonEvent.Released, function () {
     }
 })
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
-    if (true) {
+    if (Conversation == 0) {
         animation.runImageAnimation(
         Astronaut,
         [img`
@@ -247,7 +249,7 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     }
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (true) {
+    if (Conversation == 0) {
         animation.runImageAnimation(
         Astronaut,
         [img`
@@ -390,6 +392,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 let Rej = 0
+let textSprite: TextSprite = null
 let NumberNPC = 0
 let Conversation = 0
 let Astronaut: Sprite = null
@@ -605,7 +608,7 @@ NPC = sprites.create(img`
     11bbb.11bbb.11bbb............
     .bbb...bbb...bbb.............
     `, SpriteKind.Interact)
-NPC.setPosition(1000, 85)
+NPC.setPosition(500, 85)
 animation.runImageAnimation(
 NPC,
 [img`
@@ -1908,7 +1911,6 @@ let TextBackground = sprites.create(img`
     11ffffffffffffffffffffffff111fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff11ffffff11
     .11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111.
     `, SpriteKind.Image)
-let textSprite: Sprite = textsprite.create("Hello")
 forever(function () {
     if (Astronaut.overlapsWith(Reja) && Rej == 0) {
         Rej = 0
@@ -1932,8 +1934,11 @@ forever(function () {
     }
 })
 forever(function () {
-    TextBackground.setPosition(scene.cameraProperty(CameraProperty.X), scene.cameraProperty(CameraProperty.Y) - 47)
-    textSprite.setPosition(scene.cameraProperty(CameraProperty.X) - 35, scene.cameraProperty(CameraProperty.Y) - 53)
+    if (Conversation > 0) {
+        TextBackground.setPosition(scene.cameraProperty(CameraProperty.X), scene.cameraProperty(CameraProperty.Y) - 47)
+    } else {
+        TextBackground.setPosition(-100, -100)
+    }
 })
 forever(function () {
     if (Astronaut.overlapsWith(NPC)) {
