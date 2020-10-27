@@ -928,6 +928,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Level, function (sprite, otherSp
     Button.setPosition(-50, -50)
     OnInteract = 0
 })
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    sprite.destroy()
+    pause(100)
+    otherSprite.destroy(effects.disintegrate, 1000)
+})
 controller.left.onEvent(ControllerButtonEvent.Repeated, function () {
     if (Conversation != 0) {
         animation.runImageAnimation(
