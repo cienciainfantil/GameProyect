@@ -4,7 +4,8 @@
     "dependencies": {
         "device": "*",
         "animation": "*",
-        "arcade-text": "github:microsoft/arcade-text#v1.3.0"
+        "arcade-text": "github:microsoft/arcade-text#v1.3.0",
+        "Sprite Grid": "github:microsoft/arcade-grid#v1.2.2"
     },
     "files": [
         "main.blocks",
