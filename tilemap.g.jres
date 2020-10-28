@@ -164,6 +164,41 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
+    "tile33": {
+        "data": "hwQQABAAAACZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZkpIpKZmZmZmSIimZmZmZmZKSKSmZmZmZmZIiKZmZmZmSkikpkpmZmZIiIiIiKZmZmZmZmZKZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile34": {
+        "data": "hwQQABAAAACZmZmZmZlpZpmZmZmZmWlmmZmZmZmZaWaZmZmZmZlpZpmZmZmZmWkGmZmZmZmZaQaZmZmZmZlmBpmZmZmZaWYAmZmZmZlmBgCZmZmZaWYAAJmZmZlmAAAAmZmZaQYAAACZmWlmAAAAAJmZZgAAAAAAmWYGAAAAAABmBgAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile35": {
+        "data": "hwQQABAAAABmBgAAAAAAAJlmZgAAAAAAmZlmBgAAAACZmZlmBgAAAJmZmWlmAAAAmZmZmWYGAACZmZmZaWYAAJmZmZmZZgAAmZmZmZlmBgCZmZmZmWkGAJmZmZmZmWYAmZmZmZmZaQaZmZmZmZlpZpmZmZmZmWlmmZmZmZmZaWaZmZmZmZlpZg==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile36": {
+        "data": "hwQQABAAAABmZmZmZmaZmWZmZmZmZpmZZmZmZmZmmZlmZmZmZmaZmWZmZmZmZpmZZmZmZmZmmZlmZmZmZmaZmWZmZmZmZpmZZmZmZmZmmZlmZmZmZmaZmWZmZmZmZpmZZmZmZmZmmZlmZmZmZmaZmWZmZmZmZpmZZmZmZmZmmZlmZmZmZmaZmQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile37": {
+        "data": "hwQQABAAAACZmZmZmZlmZpmZmZmZmWZmmZmZmZmZZmaZmZmZmZlpZpmZmZmZmWlmmZmZmZmZaWaZmZmZmZlpZpmZmZmZmWlmmZmZmZmZaWaZmZmZmZlpZpmZmZmZmWlmmZmZmZmZaWaZmZmZmZlpZpmZmZmZmWlmmZmZmZmZZmaZmZmZmZlmZg==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile38": {
+        "data": "hwQQABAAAABmZmZmZmaZmWZmZmZmZpmZZmZmZmZmmZlmZmZmZmaZmWZmZmZmZpmZZmZmZmZmmZlmZmZmZmaZmWZmZmZmZpmZZmZmZmZmmZlmZmZmZmaZmWZmZmZmZpmZZmZmZmZmmZlmZmZmZmaZmWZmZmZmZpaZZmZmZmZmZplmZmZmZmZmZg==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile39": {
+        "data": "hwQQABAAAABmZmZmZmZmZmZmZmZmZmaZZmZmZmZmlplmZmZmZmaZmWZmZmZmZpmZZmZmZmZmmZlmZmZmZmaZmWZmZmZmZpmZZmZmZmZmmZlmZmZmZmaZmWZmZmZmZpmZZmZmZmZmmZlmZmZmZmaZmWZmZmZmZpmZZmZmZmZmmZlmZmZmZmaZmQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
     "level": {
         "id": "level",
         "mimeType": "application/mkcd-tilemap",
