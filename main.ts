@@ -178,6 +178,32 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
 })
+function Melody () {
+    for (let index = 0; index < 2; index++) {
+        if (OnLevel == -1) {
+            music.playMelody("D A D F D A D F ", 240)
+        } else if (OnLevel == 1) {
+            music.playMelody("F G - E F - F G ", 240)
+        }
+    }
+    if (OnLevel == -1) {
+        music.playMelody("D C D E D G C E ", 240)
+    } else if (OnLevel == 1) {
+        music.playMelody("F G - E F - F G ", 240)
+    }
+    for (let index = 0; index < 2; index++) {
+        if (OnLevel == -1) {
+            music.playMelody("C G C E C G C E ", 240)
+        } else if (OnLevel == 1) {
+            music.playMelody("F G - E F - F G ", 240)
+        }
+    }
+    if (OnLevel == -1) {
+        music.playMelody("C F C D C A D F ", 240)
+    } else if (OnLevel == 1) {
+        music.playMelody("F G - E F - F G ", 240)
+    }
+}
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (OnLevel == -1) {
         if (OnInteract == 1 && Conversation > 0) {
@@ -248,6 +274,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (OnInteract == -1) {
+        OnLevel = 0
         DestroyEscenary()
         if (FlagList.indexOf(FlagX) == 0) {
             tiles.setTilemap(tiles.createTilemap(hex`160010000000000d0a0a0a0a0a0a0c0000000d0a0a0c00000000000000090b0b0b0b0b0b08000000090b0b0800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000070000000000000000000000000000000000000000000f0000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000202020201000000000502020100000000050202020204040404030000000006040403000000000604040404`, img`
@@ -3279,6 +3306,7 @@ function DestroyEscenary () {
     pause(50)
     Astronaut.destroy()
     pause(50)
+    OnLevel = 0
     scene.centerCameraAt(0, 0)
     Background = sprites.create(img`
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -3830,6 +3858,9 @@ tiles.setTilemap(tiles.createTilemap(hex`c80008000000000000000000000000000000000
 NPCon = 0
 Gravity = 1
 CreateEscenary()
+forever(function () {
+    Melody()
+})
 forever(function () {
     if (Conversation > 0) {
         TextBackground.setPosition(scene.cameraProperty(CameraProperty.X), scene.cameraProperty(CameraProperty.Y) + 47)
