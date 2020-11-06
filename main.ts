@@ -178,32 +178,12 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
 })
-function Melody () {
-    for (let index = 0; index < 2; index++) {
-        if (OnLevel == -1) {
-            music.playMelody("D A D F D A D F ", 240)
-        } else if (OnLevel == 1) {
-            music.playMelody("F G - E F - F G ", 240)
-        }
-    }
-    if (OnLevel == -1) {
-        music.playMelody("D C D E D G C E ", 240)
-    } else if (OnLevel == 1) {
-        music.playMelody("F G - E F - F G ", 240)
-    }
-    for (let index = 0; index < 2; index++) {
-        if (OnLevel == -1) {
-            music.playMelody("C G C E C G C E ", 240)
-        } else if (OnLevel == 1) {
-            music.playMelody("F G - E F - F G ", 240)
-        }
-    }
-    if (OnLevel == -1) {
-        music.playMelody("C F C D C A D F ", 240)
-    } else if (OnLevel == 1) {
-        music.playMelody("F G - E F - F G ", 240)
-    }
-}
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile41, function (sprite, location) {
+    Astronaut.setPosition(SpawnPlayer[0], SpawnPlayer[1])
+    Astronaut.setVelocity(0, 0)
+    Astronaut.ay = 300
+    Gravity = 1
+})
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (OnLevel == -1) {
         if (OnInteract == 1 && Conversation > 0) {
@@ -272,12 +252,20 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
 })
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile42, function (sprite, location) {
+    Astronaut.setPosition(SpawnPlayer[0], SpawnPlayer[1])
+    Astronaut.setVelocity(0, 0)
+    Astronaut.ay = 300
+    Gravity = 1
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (OnInteract == -1) {
         OnLevel = 0
         DestroyEscenary()
         if (FlagList.indexOf(FlagX) == 0) {
-            tiles.setTilemap(tiles.createTilemap(hex`160010000000000d0a0a0a0a0a0a0c0000000d0a0a0c00000000000000090b0b0b0b0b0b08000000090b0b0800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000070000000000000000000000000000000000000000000f0000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000202020201000000000502020100000000050202020204040404030000000006040403000000000604040404`, img`
+            tiles.setTilemap(tiles.createTilemap(hex`1600140010101012121212121212121010101212121210101010000000121212121212121200000012121212000000000000000d0a0a0a0a0a0a0c0000000d0a0a0c00000000000000090b0b0b0b0b0b08000000090b0b0800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000070000000000000000000000000000000000000000000f0000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002020202010000000005020201000000000502020202040404040300000000060404030000000006040404041212121212000000001212121200000000121212121212121212121111111112121212111111111212121212`, img`
+                ...2......2...2..2....
+                ...2......2...2..2....
                 ...2......2...2..2....
                 ...22222222...2222....
                 ......................
@@ -294,7 +282,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
                 ......................
                 22222....2222....22222
                 ....2....2..2....2....
-                `, [myTiles.transparency16,myTiles.tile3,myTiles.tile4,myTiles.tile12,myTiles.tile13,myTiles.tile1,myTiles.tile14,myTiles.tile15,myTiles.tile34,myTiles.tile35,myTiles.tile36,myTiles.tile37,myTiles.tile38,myTiles.tile39,myTiles.tile33,myTiles.tile40], TileScale.Sixteen))
+                ....2....2..2....2....
+                ....2....2..2....2....
+                `, [myTiles.transparency16,myTiles.tile3,myTiles.tile4,myTiles.tile12,myTiles.tile13,myTiles.tile1,myTiles.tile14,myTiles.tile15,myTiles.tile34,myTiles.tile35,myTiles.tile36,myTiles.tile37,myTiles.tile38,myTiles.tile39,myTiles.tile33,myTiles.tile40,myTiles.tile41,myTiles.tile42,myTiles.tile43], TileScale.Sixteen))
             OnLevel = 1
             Gravity = 1
         }
@@ -3210,10 +3200,12 @@ function CreateEscenary () {
             ..cccbbbb...
             `, SpriteKind.Player)
         Astronaut.ay = 250
-        scene.cameraFollowSprite(Astronaut)
         tiles.placeOnTile(Astronaut, value)
         Astronaut.setPosition(Astronaut.x, Astronaut.y + 22)
         tiles.setTileAt(value, myTiles.transparency16)
+        scene.cameraFollowSprite(Astronaut)
+        SpawnPlayer[0] = Astronaut.x
+        SpawnPlayer[1] = Astronaut.y
     }
     pause(50)
     ScoreBar = sprites.create(img`
@@ -3304,6 +3296,9 @@ function DestroyEscenary () {
         value.destroy()
     }
     pause(50)
+    for (let index = 0; index < SpawnPlayer.length; index++) {
+        SpawnPlayer.pop()
+    }
     Astronaut.destroy()
     pause(50)
     OnLevel = 0
@@ -3693,6 +3688,7 @@ let NPCon = 0
 let StartupEtape = 0
 let PlayerPos: number[] = []
 let FlagList: number[] = []
+let SpawnPlayer: number[] = []
 let Button: Sprite = null
 let OnLevel = 0
 // Negative: Num Map
@@ -3718,6 +3714,7 @@ Button = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Image)
 Button.setPosition(-50, -50)
+SpawnPlayer = []
 FlagList = []
 let Energy = 100
 let O2 = 100
@@ -3859,7 +3856,22 @@ NPCon = 0
 Gravity = 1
 CreateEscenary()
 forever(function () {
-    Melody()
+    for (let index = 0; index < 2; index++) {
+        if (OnLevel != 0) {
+            music.playMelody("D A D F D A D F ", 240)
+        }
+    }
+    if (OnLevel != 0) {
+        music.playMelody("D C D E D G C E ", 240)
+    }
+    for (let index = 0; index < 2; index++) {
+        if (OnLevel != 0) {
+            music.playMelody("C G C E C G C E ", 240)
+        }
+    }
+    if (OnLevel != 0) {
+        music.playMelody("C F C D C A D F ", 240)
+    }
 })
 forever(function () {
     if (Conversation > 0) {
