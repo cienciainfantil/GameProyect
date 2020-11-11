@@ -274,6 +274,16 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
+    "tile55": {
+        "data": "hwQQABAAAABmZmZmZmZmZpmZmZlmZmZmmZmZmWlmZmaZmZmZmWZmZpmZmZmZZmZmmZmZmWlmZmaZmZmZaWZmZpmZmZlmZmZmmZmZmWZmZmaZmZlpZmZmZpmZmWlmZmZmmZmZZmZmZmaZmWlmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZg==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile56": {
+        "data": "hwQQABAAAABmlpmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmWaWmZmZmZmZZmaZmZmZmZlmZpmZmZmZmQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
     "level": {
         "id": "level",
         "mimeType": "application/mkcd-tilemap",
