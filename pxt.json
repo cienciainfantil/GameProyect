@@ -1,23 +1,20 @@
 {
-    "name": "GameProyect",
-    "description": "",
+    "name": "gameproyect",
     "dependencies": {
         "device": "*",
         "animation": "*",
-        "arcade-text": "github:microsoft/arcade-text#v1.3.0",
-        "Sprite Grid": "github:microsoft/arcade-grid#v1.2.2",
-        "edge-connector": "*"
+        "arcade-text": "github:microsoft/arcade-text#v1.3.0"
     },
     "files": [
+        ".vscode/settings.json",
+        ".vscode/tasks.json",
+        "README.md",
         "main.blocks",
         "main.ts",
-        "README.md",
+        "test.ts",
         "tilemap.g.jres",
         "tilemap.g.ts",
-        null
-    ],
-    "testFiles": [
-        "test.ts"
+        "tsconfig.json"
     ],
     "targetVersions": {
         "target": "1.2.10",

@@ -194,21 +194,47 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.EnemyLessEnergy, function (sprit
     Hit()
 })
 function Melody () {
-    for (let index = 0; index < 2; index++) {
-        if (OnLevel != 0) {
+    if (OnLevel != 0) {
+        if (Maps == 0) {
             music.playMelody("D A D F D A D F ", 240)
+        } else if (Maps == 1) {
+            music.playMelody("- F C - D C E - ", 240)
         }
     }
     if (OnLevel != 0) {
-        music.playMelody("D C D E C G C E ", 240)
+        if (Maps == 0) {
+            music.playMelody("D A D F D A D F ", 240)
+        } else if (Maps == 1) {
+            music.playMelody("- F C - E C D - ", 240)
+        }
     }
-    for (let index = 0; index < 2; index++) {
-        if (OnLevel != 0) {
+    if (OnLevel != 0) {
+        if (Maps == 0) {
+            music.playMelody("D C D E C G C E ", 240)
+        } else if (Maps == 1) {
+            music.playMelody("D C - A G F E F ", 240)
+        }
+    }
+    if (OnLevel != 0) {
+        if (Maps == 0) {
             music.playMelody("C G C E C G C E ", 240)
+        } else if (Maps == 1) {
+            music.playMelody("- A E - F E G - ", 240)
         }
     }
     if (OnLevel != 0) {
-        music.playMelody("C D E F D A D F ", 240)
+        if (Maps == 0) {
+            music.playMelody("C G C E C G C E ", 240)
+        } else if (Maps == 1) {
+            music.playMelody("- A E - G E F - ", 240)
+        }
+    }
+    if (OnLevel != 0) {
+        if (Maps == 0) {
+            music.playMelody("C D E F D A D F ", 240)
+        } else if (Maps == 1) {
+            music.playMelody("F E - F G E C D ", 240)
+        }
     }
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile41, function (sprite, location) {
@@ -14383,7 +14409,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.DoorMap, function (sprite, other
         8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
         8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
         `)
-    tiles.setTilemap(tiles.createTilemap(hex`780008000003000000000000000000000000000003000000000000000000000000000000000003000000000000000000000000030000000000000000000000000000000000030000000000000000000000000000000003000000130000000000000000030000000000130000030000000300000000000000000000030005000000000000000000000000000005000000000000000000000000000000000005000000000000000000000000050000000000000000000000000000000000050000000000000000000000000000000005000000130000000000000000050000000000130000050000000500000000000000000000050003140000000000000000000000000003000000000000000000000000000000000003000000000000000000000000030000000000000000000000000000000000030000000000000000000000000000000003000000130000000000000000030000000000130000030000000300000000000000000000030005000000000001000000000000000005010000000016000000000001000000000005000000000100000016000000050100000000000000000000000001000000050000111216000001000000000000010005000000130100000000010000050016000000130000050000000500000000000000000000050004000009150a0b00000000000000000400000000090b0b000000000000000000000400000000000000000000090a0c150b0000000000000000000000000000000400000f10000000000000000000000000040000001300000000000000000400000000001300000400000004000000000000000000000400020000081300080000000000000000020000000008000800000000000000000000020000000000000000000008000213080000000000000000000000000000000200000e0d0000000000000000000000000200000008000000000000000002000000000008001702000000020000000000000000000002060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707`, img`
+    tiles.setTilemap(tiles.createTilemap(hex`780008000003000000000000000000000000000003000000000000000000000000000000000003000000000000000000000000030000000000000000000000000000000000030000000000000000000000000000000003000000130000000000000000030000000000130000030000000300000000000000000000030005000000000000000000000000000005000000000000000000000000000000000005000000000000000000000000050000000000000000000000000000000000050000000000000000000000000000000005000000130000000000000000050000000000130000050000000500000000000000000000050003140000000000000000000000000003000000000000000000000000000000000003000000000000000000000000030000000000000000000000000000000000030000000000000000000000000000000003000000130000000000000000030000000000130000030000000300000000000000000000030005000000000001000000000000000005010016000000000000000001000000000005000000000100000016000000050100000000000000000000000001000000050000111200160001000000000000010005000000130100000000010000050016000000130000050000000500000000000000000000050004000009150a0b00000000000000000400000000090b0b000000000000000000000400000000000000000000090a0c150b0000000000000000000000000000000400000f1000000000000000000000000004000000130000000000000000040000000000130000040000000400000000000000000000040002191a081300080000000000000000021818181a08000800000000000000000000020000000000001918181a08000213080000000000000000000000000000000200000e0d1918181a000000000000000002000000080000000000000000021918181a0008001702000000020000000000000000000002060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606060606070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707`, img`
         ........................................................................................................................
         ........................................................................................................................
         ........................................................................................................................
@@ -14392,7 +14418,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.DoorMap, function (sprite, other
         ........................................................................................................................
         222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
         ........................................................................................................................
-        `, [myTiles.transparency16,myTiles.tile32,myTiles.tile65,myTiles.tile66,myTiles.tile68,myTiles.tile69,myTiles.tile72,myTiles.tile73,myTiles.tile74,myTiles.tile75,myTiles.tile76,myTiles.tile77,myTiles.tile78,myTiles.tile79,myTiles.tile80,myTiles.tile81,myTiles.tile82,myTiles.tile83,myTiles.tile84,myTiles.tile85,myTiles.tile15,myTiles.tile86,myTiles.tile22,myTiles.tile88], TileScale.Sixteen))
+        `, [myTiles.transparency16,myTiles.tile32,myTiles.tile65,myTiles.tile66,myTiles.tile68,myTiles.tile69,myTiles.tile72,myTiles.tile73,myTiles.tile74,myTiles.tile75,myTiles.tile76,myTiles.tile77,myTiles.tile78,myTiles.tile79,myTiles.tile80,myTiles.tile81,myTiles.tile82,myTiles.tile83,myTiles.tile84,myTiles.tile85,myTiles.tile15,myTiles.tile86,myTiles.tile22,myTiles.tile88,myTiles.tile89,myTiles.tile90,myTiles.tile91], TileScale.Sixteen))
     OnLevel = -1
     CreateEscenary()
     Gravity = 1
@@ -14781,9 +14807,9 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Interact, function (sprite, otherSprite) {
     OnInteract = 1
-    Button.setPosition(otherSprite.x, otherSprite.y - 20)
+    Button2.setPosition(otherSprite.x, otherSprite.y - 20)
     pause(500)
-    Button.setPosition(-50, -50)
+    Button2.setPosition(-50, -50)
     OnInteract = 0
 })
 scene.onHitWall(SpriteKind.EnemyLessEnergy, function (sprite, location) {
@@ -15291,17 +15317,10 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.End, function (sprite, otherSprite) {
     OnInteract = -2
-    Button.setPosition(otherSprite.x, otherSprite.y - 20)
+    Button2.setPosition(otherSprite.x, otherSprite.y - 20)
     pause(500)
-    Button.setPosition(-50, -50)
+    Button2.setPosition(-50, -50)
     OnInteract = 0
-})
-scene.onOverlapTile(SpriteKind.Player, myTiles.tile70, function (sprite, location) {
-    if (FlagsPassed == 10) {
-        FlagsPassed = 0
-        OnLevel = 0
-        DestroyEscenary()
-    }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Alert, function (sprite, otherSprite) {
     if (TypeLevel == 1) {
@@ -19105,7 +19124,7 @@ scene.onHitWall(SpriteKind.EnemyUpLessEnergy, function (sprite, location) {
     }
 })
 function CreateEscenary () {
-    Button = sprites.create(img`
+    Button2 = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -19123,7 +19142,7 @@ function CreateEscenary () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Image)
-    Button.setPosition(-50, -50)
+    Button2.setPosition(-50, -50)
     for (let value of tiles.getTilesByType(myTiles.tile32)) {
         LevelFlag = sprites.create(img`
             ..........e...
@@ -19390,7 +19409,7 @@ function CreateEscenary () {
         FlagList.push(LevelFlag.x)
         tiles.setTileAt(value, myTiles.transparency16)
     }
-    for (let value of tiles.getTilesByType(myTiles.tile40)) {
+    for (let value2 of tiles.getTilesByType(myTiles.tile40)) {
         LevelFlag = sprites.create(img`
             ..........e...
             .........eee..
@@ -19651,12 +19670,12 @@ function CreateEscenary () {
         75,
         true
         )
-        tiles.placeOnTile(LevelFlag, value)
+        tiles.placeOnTile(LevelFlag, value2)
         LevelFlag.setPosition(LevelFlag.x, LevelFlag.y + 29)
         FlagList.push(LevelFlag.x)
-        tiles.setTileAt(value, myTiles.transparency16)
+        tiles.setTileAt(value2, myTiles.transparency16)
     }
-    for (let value of tiles.getTilesByType(myTiles.tile33)) {
+    for (let value3 of tiles.getTilesByType(myTiles.tile33)) {
         LevelFlag = sprites.create(img`
             ..........e...
             .........eee..
@@ -19917,12 +19936,12 @@ function CreateEscenary () {
         75,
         true
         )
-        tiles.placeOnTile(LevelFlag, value)
+        tiles.placeOnTile(LevelFlag, value3)
         LevelFlag.setPosition(LevelFlag.x, LevelFlag.y + 29)
         FlagList.push(LevelFlag.x)
-        tiles.setTileAt(value, myTiles.transparency16)
+        tiles.setTileAt(value3, myTiles.transparency16)
     }
-    for (let value of tiles.getTilesByType(myTiles.tile28)) {
+    for (let value4 of tiles.getTilesByType(myTiles.tile28)) {
         Nav = sprites.create(img`
             ..........................bbbbbbbb..........................
             ......................bbbbbbbbbbbbbbbc......................
@@ -20116,11 +20135,11 @@ function CreateEscenary () {
         1000,
         true
         )
-        tiles.placeOnTile(Nav, value)
+        tiles.placeOnTile(Nav, value4)
         Nav.setPosition(Nav.x - 40, Nav.y + 28)
-        tiles.setTileAt(value, myTiles.transparency16)
+        tiles.setTileAt(value4, myTiles.transparency16)
     }
-    for (let value of tiles.getTilesByType(myTiles.tile22)) {
+    for (let value5 of tiles.getTilesByType(myTiles.tile22)) {
         NPC = sprites.create(img`
             .............................
             .............................
@@ -21232,11 +21251,11 @@ function CreateEscenary () {
         100,
         true
         )
-        tiles.placeOnTile(NPC, value)
+        tiles.placeOnTile(NPC, value5)
         NPC.setPosition(NPC.x, NPC.y + 32)
-        tiles.setTileAt(value, myTiles.transparency16)
+        tiles.setTileAt(value5, myTiles.transparency16)
     }
-    for (let value of tiles.getTilesByType(myTiles.tile15)) {
+    for (let value6 of tiles.getTilesByType(myTiles.tile15)) {
         Astronaut = sprites.create(img`
             ..dddddd....
             .dddddddd...
@@ -21272,14 +21291,14 @@ function CreateEscenary () {
             ..cccbbbb...
             `, SpriteKind.Player)
         Astronaut.ay = 250
-        tiles.placeOnTile(Astronaut, value)
+        tiles.placeOnTile(Astronaut, value6)
         Astronaut.setPosition(Astronaut.x, Astronaut.y + 22)
-        tiles.setTileAt(value, myTiles.transparency16)
+        tiles.setTileAt(value6, myTiles.transparency16)
         scene.cameraFollowSprite(Astronaut)
         SpawnPlayer[0] = Astronaut.x
         SpawnPlayer[1] = Astronaut.y
     }
-    for (let value of tiles.getTilesByType(myTiles.tile44)) {
+    for (let value7 of tiles.getTilesByType(myTiles.tile44)) {
         EnergyJewel = sprites.create(img`
             . . . . . . . . . 
             . . . . . . . . . 
@@ -21301,7 +21320,7 @@ function CreateEscenary () {
             . . . . . . . . . 
             . . . . . . . . . 
             `, SpriteKind.jewel)
-        tiles.placeOnTile(EnergyJewel, value)
+        tiles.placeOnTile(EnergyJewel, value7)
         animation.runImageAnimation(
         EnergyJewel,
         [img`
@@ -21408,9 +21427,9 @@ function CreateEscenary () {
         100,
         true
         )
-        tiles.setTileAt(value, myTiles.transparency16)
+        tiles.setTileAt(value7, myTiles.transparency16)
     }
-    for (let value of tiles.getTilesByType(myTiles.tile52)) {
+    for (let value8 of tiles.getTilesByType(myTiles.tile52)) {
         AlertMeteoriteDown = sprites.create(img`
             1 . . . . . . . . . . . . . . 1 
             . . . . . . . . . . . . . . . . 
@@ -21429,10 +21448,10 @@ function CreateEscenary () {
             . . . . . . . . . . . . . . . . 
             1 . . . . . . . . . . . . . . 1 
             `, SpriteKind.Alert)
-        tiles.placeOnTile(AlertMeteoriteDown, value)
-        tiles.setTileAt(value, myTiles.transparency16)
+        tiles.placeOnTile(AlertMeteoriteDown, value8)
+        tiles.setTileAt(value8, myTiles.transparency16)
     }
-    for (let value of tiles.getTilesByType(myTiles.tile63)) {
+    for (let value9 of tiles.getTilesByType(myTiles.tile63)) {
         BotEnemyDownGravity = sprites.create(img`
             . . . . . . . . . . . 1 . . . . 
             . . . . . . . . . . 1 d 1 . . . 
@@ -21613,10 +21632,10 @@ function CreateEscenary () {
         )
         BotEnemyDownGravity.vx = -50
         BotEnemyDownGravity.ax = -1
-        tiles.placeOnTile(BotEnemyDownGravity, value)
-        tiles.setTileAt(value, myTiles.transparency16)
+        tiles.placeOnTile(BotEnemyDownGravity, value9)
+        tiles.setTileAt(value9, myTiles.transparency16)
     }
-    for (let value of tiles.getTilesByType(myTiles.tile64)) {
+    for (let value10 of tiles.getTilesByType(myTiles.tile64)) {
         BotEnemyUpGravity = sprites.create(img`
             . . . . . . . . . . . 1 . . . . 
             . . . . . . . . . . 1 d 1 . . . 
@@ -21797,13 +21816,13 @@ function CreateEscenary () {
         )
         BotEnemyUpGravity.vx = -50
         BotEnemyUpGravity.ax = -1
-        tiles.placeOnTile(BotEnemyUpGravity, value)
-        tiles.setTileAt(value, myTiles.transparency16)
+        tiles.placeOnTile(BotEnemyUpGravity, value10)
+        tiles.setTileAt(value10, myTiles.transparency16)
     }
-    for (let value of sprites.allOfKind(SpriteKind.Level)) {
-        for (let index = 0; index <= FlagsPassedList.length - 1; index++) {
-            if (FlagsPassedList[index] == value.x) {
-                value.destroy()
+    for (let value11 of sprites.allOfKind(SpriteKind.Level)) {
+        for (let index3 = 0; index3 <= FlagsPassedList.length - 1; index3++) {
+            if (FlagsPassedList[index3] == value11.x) {
+                value11.destroy()
                 LevelFlagComplete = sprites.create(img`
                     ..............
                     ..............
@@ -21828,7 +21847,7 @@ function CreateEscenary () {
                     ..............
                     ..............
                     `, SpriteKind.Image)
-                LevelFlagComplete.setPosition(value.x, value.y)
+                LevelFlagComplete.setPosition(value11.x, value11.y)
                 LevelFlagComplete.z = -1
                 animation.runImageAnimation(
                 LevelFlagComplete,
@@ -22139,36 +22158,39 @@ function CreateEscenary () {
         `, SpriteKind.Bar)
 }
 function DestroyEscenary () {
-    for (let value of sprites.allOfKind(SpriteKind.EnemyLessEnergy)) {
-        value.destroy()
+    for (let value12 of sprites.allOfKind(SpriteKind.EnemyLessEnergy)) {
+        value12.destroy()
     }
-    for (let value of sprites.allOfKind(SpriteKind.EnemyUpLessEnergy)) {
-        value.destroy()
-    }
-    pause(50)
-    for (let value of sprites.allOfKind(SpriteKind.Image)) {
-        value.destroy()
-    }
-    for (let value of sprites.allOfKind(SpriteKind.Bar)) {
-        value.destroy()
-    }
-    for (let value of sprites.allOfKind(SpriteKind.DoorMap)) {
-        value.destroy()
+    for (let value13 of sprites.allOfKind(SpriteKind.EnemyUpLessEnergy)) {
+        value13.destroy()
     }
     pause(50)
-    for (let value of sprites.allOfKind(SpriteKind.Level)) {
-        value.destroy()
+    for (let value14 of sprites.allOfKind(SpriteKind.Image)) {
+        value14.destroy()
+    }
+    for (let value15 of sprites.allOfKind(SpriteKind.Bar)) {
+        value15.destroy()
+    }
+    for (let value16 of sprites.allOfKind(SpriteKind.DoorMap)) {
+        value16.destroy()
     }
     pause(50)
-    for (let value of sprites.allOfKind(SpriteKind.jewel)) {
-        value.destroy()
-    }
-    for (let value of sprites.allOfKind(SpriteKind.Interact)) {
-        value.destroy()
+    for (let value17 of sprites.allOfKind(SpriteKind.Level)) {
+        value17.destroy()
     }
     pause(50)
-    for (let value of sprites.allOfKind(SpriteKind.End)) {
-        value.destroy()
+    for (let value18 of sprites.allOfKind(SpriteKind.jewel)) {
+        value18.destroy()
+    }
+    for (let value19 of sprites.allOfKind(SpriteKind.Interact)) {
+        value19.destroy()
+    }
+    pause(50)
+    for (let value20 of sprites.allOfKind(SpriteKind.End)) {
+        value20.destroy()
+    }
+    for (let value19 of sprites.allOfKind(SpriteKind.Alert)) {
+        value19.destroy()
     }
     pause(50)
     for (let index = 0; index < SpawnPlayer.length; index++) {
@@ -22478,8 +22500,8 @@ function DestroyEscenary () {
     true
     )
     pause(randint(500, 5000))
-    for (let value of sprites.allOfKind(SpriteKind.Image)) {
-        value.destroy()
+    for (let value21 of sprites.allOfKind(SpriteKind.Image)) {
+        value21.destroy()
     }
 }
 function Hit () {
@@ -22698,10 +22720,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.jewel, function (sprite, otherSp
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Level, function (sprite, otherSprite) {
     OnInteract = -1
-    Button.setPosition(otherSprite.x, otherSprite.y - 20)
+    Button2.setPosition(otherSprite.x, otherSprite.y - 20)
     pause(500)
     FlagX = otherSprite.x
-    Button.setPosition(-50, -50)
+    Button2.setPosition(-50, -50)
     OnInteract = 0
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.EnemyUpLessEnergy, function (sprite, otherSprite) {
@@ -22810,6 +22832,7 @@ controller.left.onEvent(ControllerButtonEvent.Repeated, function () {
 })
 let Port: Sprite = null
 let Bonus_1: Sprite = null
+let OnHitting = 0
 let Loader: Sprite = null
 let Background: Sprite = null
 let EnergyBar: Sprite = null
@@ -22824,7 +22847,7 @@ let NPC: Sprite = null
 let Nav: Sprite = null
 let LevelFlag: Sprite = null
 let TimeLaser: Sprite = null
-let Button: Sprite = null
+let Button2: Sprite = null
 let TextBackground: Sprite = null
 let TypeLevel = 0
 let FlagX = 0
@@ -22844,12 +22867,12 @@ let NPCon = 0
 let PlayerPos: number[] = []
 let TimeLapse = 0
 let Energy = 0
-let FlagsPassed = 0
 let FlagsPassedList: number[] = []
 let FlagList: number[] = []
 let SpawnPlayer: number[] = []
 let OnLevel = 0
 let Maps = 0
+let StartupEtape = 0
 music.setVolume(75)
 Maps = 0
 // Negative: Num Map
@@ -22859,12 +22882,11 @@ OnLevel = -1
 SpawnPlayer = []
 FlagList = []
 FlagsPassedList = []
-FlagsPassed = 0
+let FlagsPassed = 0
 let SpriteFlagList = sprites.allOfKind(SpriteKind.Level)
 Energy = 100
 TimeLapse = 100
 PlayerPos = []
-let StartupEtape = 0
 scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -24549,7 +24571,6 @@ true
 )
 InstructionCount = 2
 TypeInstruction = 1
-let OnHitting = 0
 forever(function () {
     Melody()
 })
@@ -24837,11 +24858,11 @@ forever(function () {
 })
 forever(function () {
     if (OnLevelCompleted == 1) {
-        for (let value of sprites.allOfKind(SpriteKind.Level)) {
-            if (FlagX == value.x) {
+        for (let value22 of sprites.allOfKind(SpriteKind.Level)) {
+            if (FlagX == value22.x) {
                 OnLevelCompleted = 0
                 animation.runImageAnimation(
-                value,
+                value22,
                 [img`
                     ..........e...
                     .........eee..
@@ -25192,7 +25213,7 @@ forever(function () {
                 false
                 )
                 pause(1000)
-                value.destroy()
+                value22.destroy()
                 LevelFlagComplete = sprites.create(img`
                     ..............
                     ..............
@@ -25217,7 +25238,7 @@ forever(function () {
                     ..............
                     ..............
                     `, SpriteKind.Image)
-                LevelFlagComplete.setPosition(value.x, value.y)
+                LevelFlagComplete.setPosition(value22.x, value22.y)
                 LevelFlagComplete.z = -1
                 animation.runImageAnimation(
                 LevelFlagComplete,
@@ -25455,6 +25476,7 @@ forever(function () {
                 75,
                 true
                 )
+                music.powerUp.play()
                 FlagsPassedList.push(LevelFlagComplete.x)
                 FlagsPassed += 1
             }
@@ -25464,7 +25486,7 @@ forever(function () {
 forever(function () {
     if (FlagsPassed == 10) {
         FlagsPassed = 0
-        for (let value of tiles.getTilesByType(myTiles.tile87)) {
+        for (let value23 of tiles.getTilesByType(myTiles.tile87)) {
             Port = sprites.create(img`
                 4 4 e e e e e e e e e e e e e e 
                 4 4 e e e e e e e e e e e e e e 
@@ -25483,10 +25505,10 @@ forever(function () {
                 4 4 e e e e e e e e e e e e e e 
                 4 4 e e e e e e e e e e e e e e 
                 `, SpriteKind.Image)
-            tiles.placeOnTile(Port, value)
-            tiles.setTileAt(value, myTiles.transparency16)
+            tiles.placeOnTile(Port, value23)
+            tiles.setTileAt(value23, myTiles.transparency16)
         }
-        for (let value of tiles.getTilesByType(myTiles.tile70)) {
+        for (let value24 of tiles.getTilesByType(myTiles.tile70)) {
             Port = sprites.create(img`
                 4 4 e e e e e e e e e e e e e e 
                 4 4 e e e e e e e e e e e e e e 
@@ -25505,10 +25527,10 @@ forever(function () {
                 4 4 e e e e e e e e e e e e e e 
                 4 4 e e e e e e e e e e e e e e 
                 `, SpriteKind.DoorMap)
-            tiles.placeOnTile(Port, value)
-            tiles.setTileAt(value, myTiles.transparency16)
+            tiles.placeOnTile(Port, value24)
+            tiles.setTileAt(value24, myTiles.transparency16)
         }
-        for (let value of tiles.getTilesByType(myTiles.tile71)) {
+        for (let value25 of tiles.getTilesByType(myTiles.tile71)) {
             Port = sprites.create(img`
                 . . . . . . . . . . . . . . . . 
                 . . . . . . . . . . . . . . . . 
@@ -25527,8 +25549,8 @@ forever(function () {
                 . . 4 4 4 4 e e e e e e e e e e 
                 4 4 4 e e e e e e e e e e e e e 
                 `, SpriteKind.Image)
-            tiles.placeOnTile(Port, value)
-            tiles.setTileAt(value, myTiles.transparency16)
+            tiles.placeOnTile(Port, value25)
+            tiles.setTileAt(value25, myTiles.transparency16)
         }
     }
 })
