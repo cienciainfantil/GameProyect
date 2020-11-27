@@ -22528,6 +22528,7 @@ function Hit () {
     )
     OnHitting += 1
     TimeLapse += -20
+    Gravity = 1
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.jewel, function (sprite, otherSprite) {
     music.magicWand.play()
